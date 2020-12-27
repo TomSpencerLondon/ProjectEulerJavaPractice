@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 import static euler.EulerThree.largestPrime;
 import static euler.EulerThree.list;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EulerThreeTest {
