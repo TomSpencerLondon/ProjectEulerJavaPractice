@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class EulerSeven {
   public static long nthPrime(int n) {
-    int numberOfPrimes = 0;
-    long prime = 1;
+    int numberOfPrimes = 2;
+    long prime = 3;
 
     while (numberOfPrimes < n){
-      prime++;
+      prime += 2;
       if (isPrime(prime)) {
         numberOfPrimes++;
       }
@@ -17,13 +17,13 @@ public class EulerSeven {
   }
 
   public static boolean isPrime(long n){
-    if (n < 2){
+    if (n < 2 || n % 2 == 0){
       return false;
     }else if (n == 2) {
       return true;
     }
 
-    for (int i = 2; i < n; i++){
+    for (int i = 3; i <= n / 2; i += 2){
       if (n % i == 0){
         return false;
       }
