@@ -6,6 +6,10 @@ public class EulerTwelve {
     int triangleNumber = 0;
     int countOfDivisors = 0;
 
+    if (numberOfDivisors == 1){
+      return 3;
+    }
+
     while (countOfDivisors <= numberOfDivisors){
       countOfDivisors = 0;
       indexOfTriangleNumber++;
@@ -16,17 +20,12 @@ public class EulerTwelve {
           countOfDivisors++;
         }
       }
-
       countOfDivisors *= 2;
     }
     return triangleNumber;
   }
 
   private static int triangleNumber(int n) {
-    int sum = 0;
-    for (int i = 0; i <= n; i++){
-      sum += i;
-    }
-    return sum;
+    return n * (n + 1) / 2;
   }
 }
