@@ -1,17 +1,13 @@
 package euler;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
-
-import static java.lang.Long.parseLong;
 
 public class EulerThirteen {
   public static String largeNumber(String input) {
     List<String> numbers = new ArrayList();
-    List<BigInteger> finalNumbers = new ArrayList<>();
+    List<BigInteger> bigIntNumbers = new ArrayList<>();
     int index = 0;
     while (index < input.length()) {
       numbers.add(input.substring(index, Math.min(index + 50, input.length())));
@@ -21,12 +17,12 @@ public class EulerThirteen {
 
     numbers.forEach((number) -> {
       BigInteger amount = new BigInteger(number);
-      finalNumbers.add(amount);
+      bigIntNumbers.add(amount);
     });
 
     BigInteger sum = BigInteger.ZERO;
-    for (int i = 0; i < finalNumbers.size(); i++){
-      sum = sum.add(finalNumbers.get(i));
+    for (int i = 0; i < bigIntNumbers.size(); i++){
+      sum = sum.add(bigIntNumbers.get(i));
     }
 
     return sum.toString().substring(0, 10);
