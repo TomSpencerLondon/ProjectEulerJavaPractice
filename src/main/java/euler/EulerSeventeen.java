@@ -16,7 +16,7 @@ public class EulerSeventeen {
 
     ArrayList<String> tens = new ArrayList<>(
         asList(
-            "", "", "twenty", "thirty", "forty", "fifty",
+            "zeros", "tens", "twenty", "thirty", "forty", "fifty",
             "sixty", "seventy", "eighty", "ninety"));
 
     if (number >= 0 && number < 20) {
@@ -39,7 +39,11 @@ public class EulerSeventeen {
   public static int count(int target){
     int result = 0;
     for (int i = 0; i < target; i++){
-      String words = numberToEnglish(i + 1).replace(" ", "").replace("-", "");
+      String words = numberToEnglish(i + 1)
+          .replace(" ", "")
+          .replace("-", "")
+          .replace("zeros", "")
+          .replace("tens", "");
       result += words.length();
     }
     return result;

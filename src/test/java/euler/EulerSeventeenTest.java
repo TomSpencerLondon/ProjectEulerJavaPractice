@@ -9,6 +9,6 @@ public class EulerSeventeenTest {
   @Test
   void returns_number_letter_counts_for_all_numbers_to_n() {
     int count = count(1000);
-    assertEquals(1, count);
+    assertEquals(21124, count);
   }
 }
